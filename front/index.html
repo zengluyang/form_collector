@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<style>
+			body {
+				padding-top: 50px;
+				padding-bottom: 20px;
+			}
+		</style>
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/main.css">
+
+		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	  <div class="container">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">填表助手</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<a id="admin" class="navbar-brand" href="#">outCsv</a>
+		</div><!--/.navbar-collapse -->
+	  </div>
+	</div>
+
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<div class="jumbotron">
+	  <div class="container">
+		<h1>2015年暑期留校研究生学生信息统计</h1>
+	  </div>
+	</div>
+	<form id="form">
+	<div class="container">
+	  <!-- Example row of columns -->
+	 	<div>已提交人数: <span id="count" class="badge"></span></div>
+	  <div class="row">
+	  	<div id="message" class="hide alert alert-success" role="alert"></div>
+	  </div>
+	  
+	  <div class="row">
+	  	<input name="学院" type="text" class="form-control" placeholder="学院" value="通信与信息工程学院"/>
+	  </div>
+	  
+	  <div class="row">
+	  	<input name="姓名" type="text" class="form-control" placeholder="姓名"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="学号" type="text" class="form-control" placeholder="学号"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="性别" type="text" class="form-control" placeholder="性别"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="民族" type="text" class="form-control" placeholder="民族"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="生源地（省\直辖市）" type="text" class="form-control" placeholder="生源地（省\直辖市）"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="留校时间段" type="text" class="form-control" placeholder="留校时间段：2015-7-16~2015-8-8"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="所在校区（沙河，清水河）" type="text" class="form-control" placeholder="所在校区（沙河，清水河）" value="清水河"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="寝室号" type="text" class="form-control" placeholder="寝室号"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="校外居住地址" type="text" class="form-control" placeholder="校外居住地址"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="学生手机号码" type="text" class="form-control" placeholder="学生手机号码"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="导师姓名" type="text" class="form-control" placeholder="导师姓名"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="导师手机号码" type="text" class="form-control" placeholder="导师手机号码"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="辅导员姓名" type="text" class="form-control" placeholder="辅导员姓名" value="刘雨萌"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="辅导员手机号码" type="text" class="form-control" placeholder="辅导员手机号码" value="13548093535"/>
+	  </div>
+	  
+	  
+	  
+	  
+<!-- 	  <div class="row">
+	  	<input name="是否离校" type="text" class="form-control" placeholder="是否离校：是/否">
+	  </div>
+	  
+	  <div class="row">
+	  	<input name="离校原因" type="text" class="form-control" placeholder="离校原因">
+	  </div>
+	  
+	  <div class="row">
+	  	<input name="外出地点（省市）" type="text" class="form-control" placeholder="外出地点（省市）：成都">
+	  </div>
+	  
+	  <div class="row">
+	  	<input name="离校时间" type="text" class="form-control" placeholder="离校时间">
+	  </div>
+	  
+	  <div class="row">
+	  	<input name="返校时间" type="text" class="form-control" placeholder="返校时间">
+	  </div>
+	  
+	  <div class="row">
+	  	<input name="个人联系方式" type="text" class="form-control" placeholder="个人联系方式">
+	  </div>
+	  
+	  <div class="row">
+	  	<input name="家庭联系方式" type="text" class="form-control" placeholder="家庭联系方式">
+	  </div> -->
+	  	<input name="event" type="hidden" value="2015年暑期留校研究生学生信息统计"/>
+
+	   <div class="row">
+	  <button id="submit" type="button" class="btn btn-default">提交</button>
+
+	  </div>
+	  <div>未提交同学: <ul id="notSubmit"></ul></div>
+	  <hr>
+	  <footer>
+		<p>&copy; 通信·伍班 2014</p>
+	  </footer>
+	</div> <!-- /container -->
+	</form>
+		<script src="js/vendor/jquery-1.11.1.js"></script>
+		<script src="js/vendor/jquery.serializejson.min.js"></script>
+		<script src="js/vendor/bootstrap.min.js"></script>
+
+		<script src="js/main.js"></script>
+		<script>
+		$(document).ready(function(){
+			var evt=$('input[name=event]').val();
+			$('#admin').attr('href','../index.php?r=form/outCsv&event='+evt);
+			//console.log(evt);
+			var refresh = function() {
+				var evt=$('input[name=event]').val();
+				$.get("../index.php?r=form/count&event="+evt, function(result){
+    				$("#count").html(result);
+  				});
+
+				$.get("../index.php?r=form/notSubmit&event="+evt, function(result){
+    				$("#notSubmit").html(result);
+  				});
+			};
+			refresh();
+		  	$('#submit').click(function(){
+		  		refresh();
+			  	var serializedData = JSON.stringify($('#form').serializeJSON());
+				var request = $.ajax({
+	        		url: "../index.php?r=form/create",
+	        		type: "post",
+	        		data: 'Form='+serializedData
+	    		}); // callback handler that will be called on success
+			    request.done(function (response, textStatus, jqXHR){
+			        // log a message to the console
+			        $('#message').removeClass('hide');
+			        $('#message').html(response);
+			        if(response.indexOf("提交失败！")!=-1){
+			        	$('#message').removeClass('alert-success').addClass('alert-danger');
+			        } else {
+			        	$('#message').removeClass('alert-danger').addClass('alert-success');
+			        }
+			    });
+
+			    // callback handler that will be called on failure
+			    request.fail(function (jqXHR, textStatus, errorThrown){
+			        // log the error to the console
+			        console.error(
+			            "The following error occured: "+
+			            textStatus, errorThrown
+			        );
+
+			        // log a message to the console
+			        $('#message').removeClass('hide').removeClass('alert-success').addClass('alert-danger');
+			        $('#message').html("The following error occured: "+
+			            textStatus, errorThrown);
+			    });
+		  	});
+		});
+		</script>
+	</body>
+</html>
