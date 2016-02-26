@@ -68,7 +68,7 @@ class FormController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create','count','notSubmit'),
+				'actions'=>array('index','view','create','count','notSubmit','create2'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -97,6 +97,20 @@ class FormController extends Controller
 
 		}
 	}
+
+	public function actionNotSubmit2() {
+		header('Content-Type: text/html; charset=utf-8');
+		if(isset($_GET['event'])){
+			foreach ($this->names2 as $name) {
+				$form=Form::model()->findByAttributes(array('event'=>$_GET['event'],'student_id'=>$name));
+				if($form==null) {
+					echo "<li>$name</li>";
+				}
+			}
+
+		}
+	}
+
 
 	public function actionOutCsv() {
 		header('Content-Type: text/plain; charset=utf-8');
@@ -171,6 +185,94 @@ class FormController extends Controller
 		}
 		echo "提交成功！";
 
+	}
+	private $names2 = [
+		'蒲玉名',
+		'杨悦',
+		'漆特',
+		'敬茂',
+		'田浩',
+		'张家铭',
+		'伍明辉',
+		'陈润',
+		'邓瑜',
+		'文典',
+		'胡爱欣',
+		'陈红会',
+		'徐成',
+		'黄宇',
+		'何焘',
+		'王维',
+		'王红',
+		'舒雯',
+		'杜东达',
+		'廖航',
+		'蒲静',
+		'陈玉萍',
+		'张炼',
+		'庞训杰',
+		'冯飞鲸',
+		'周佳',
+		'蒋冠虹',
+		'冯熠',
+		'杨逸',
+		'陈娇娇',
+		'何爽',
+		'陈华敏',
+		'冉云',
+		'姚丹',
+		'李玉娇',
+		'夏雪峰',
+		'颜越',
+		'陈雷',
+		'陈进林',
+		'任以栗',
+		'邓润春',
+		'夏文彬',
+		'牟永豪',
+		'柏景文',
+		'何倩',
+		'李秋华',
+		'冉高成',
+		'郭莎',
+		'田琳',
+		'夏白鹭',
+		'姚璇',
+		'李羚玮',
+		'周雯雯',
+		'伍丽萍',
+		'何建学',
+		'严涛',
+		'吴炜',
+		'尹天略',
+		'蒲禹东',
+		'罗璇',
+		'岳鹏飞',
+		'陈键',
+		'王雄飞',
+	];
+
+	public function actionCreate2() {
+		header('Content-Type: text/html; charset=utf-8');
+		$arr=json_decode($_POST['Form'], true);
+		$event=$arr['event'];
+		$name=$arr['姓名'];
+		if(!in_array($name,$this->names2)) {
+			echo '提交失败！姓名不匹配！';
+			return;
+		}
+		$model=Form::model()->findByAttributes(array('student_id'=>$name,'event'=>$event));
+		if(  $model == null) {
+			$model=new Form;
+		}
+		$model->student_id=$name;
+		$model->value=$_POST['Form'];
+		$model->event=$event;
+		if(!$model->save()){
+			//var_dump($model->getErrors()) ;
+			echo "提交失败！";
+		}
+		echo "提交成功！";
 	}
 
 	/**
