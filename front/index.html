@@ -46,7 +46,7 @@
 	<!-- Main jumbotron for a primary marketing message or call to action -->
 	<div class="jumbotron">
 	  <div class="container">
-		<h1>硕士研究生通过开题报告汇总表</h1>
+		<h1>2016年暑期留校研究生学生信息统计2016年暑期留校研究生学生信息统计</h1>
 	  </div>
 	</div>
 	<form id="form">
@@ -59,7 +59,7 @@
 	  </div>
 	  
 	  <div class="row">
-	  	<input name="学号" type="text" class="form-control" placeholder="学号"/>
+	  	<input name="学院" type="text" class="form-control" placeholder="学院"/>
 	  </div>
 
 	  <div class="row">
@@ -67,10 +67,62 @@
 	  </div>
 	  
 	  <div class="row">
-	  	<input name="报告题目" type="text" class="form-control" placeholder="报告题目(毕设题目)"/>
+	  	<input name="学号" type="tel" class="form-control" placeholder="学号"/>
 	  </div>
 
-	  	<input name="event" type="hidden" value="硕士研究生通过开题报告汇总表"/>
+	  <div class="row">
+	  	<input name="性别" type="text" class="form-control" placeholder="性别：男/女"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="民族" type="text" class="form-control" placeholder="民族"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="生源地（省\直辖市）" type="text" class="form-control" placeholder="生源地（省\直辖市）"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="留校时间段" type="text" class="form-control" placeholder="留校时间段，格式：7.11-8.2,8.17-8.28"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="所在校区（沙河，清水河）" type="text" class="form-control" placeholder="所在校区（沙河，清水河）"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="寝室号" type="text" class="form-control" placeholder="寝室号：硕1-xxx"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="是否在校外居住" type="text" class="form-control" placeholder="是否在校外居住：是/否"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="校外居住地址" type="text" class="form-control" placeholder="校外居住地址"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="学生手机号码" type="tel" class="form-control" placeholder="学生手机号码"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="导师姓名" type="text" class="form-control" placeholder="导师姓名"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="导师手机号码" type="text" class="form-control" placeholder="导师手机号码"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="辅导员姓名" type="text" class="form-control" placeholder="辅导员姓名"/>
+	  </div>
+
+	  <div class="row">
+	  	<input name="辅导员手机号码" type="text" class="form-control" placeholder="辅导员手机号码"/>
+	  </div>
+
+	  	<input name="event" type="hidden" value="2016年暑期留校研究生学生信息统计"/>
 
 	  <button id="submit" type="button" class="btn btn-default">提交</button>
 
@@ -96,7 +148,6 @@
 				$.get("../index.php?r=form/count&event="+evt, function(result){
     				$("#count").html(result);
   				});
-
 				$.get("../index.php?r=form/notSubmit&event="+evt, function(result){
     				$("#notSubmit").html(result);
   				});
@@ -120,7 +171,6 @@
 			        	$('#message').removeClass('alert-danger').addClass('alert-success');
 			        }
 			    });
-
 			    // callback handler that will be called on failure
 			    request.fail(function (jqXHR, textStatus, errorThrown){
 			        // log the error to the console
@@ -128,7 +178,6 @@
 			            "The following error occured: "+
 			            textStatus, errorThrown
 			        );
-
 			        // log a message to the console
 			        $('#message').removeClass('hide').removeClass('alert-success').addClass('alert-danger');
 			        $('#message').html("The following error occured: "+
